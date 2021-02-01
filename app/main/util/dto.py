@@ -16,3 +16,16 @@ class AuthDto:
         'email': fields.String(required=True, description='The email address'),
         'password': fields.String(required=True, description='The user password '),
     })
+
+class TaskDto:
+    api = Namespace('task', description='task related operations')
+    task = api.model('task', {
+        'id': fields.Integer(description='task_id'),
+        'user_id': fields.Integer(description='user_id'),
+        'title': fields.String(required=True, description='Title'),
+        'detail': fields.String(required=True, description='Detail'),
+    })
+
+    task_delete = api.model('task', {
+        'id': fields.Integer(description='task_id'),
+    })

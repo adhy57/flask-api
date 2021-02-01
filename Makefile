@@ -7,16 +7,16 @@ clean:
 	find . -type f -name '*.log' -delete
 
 install:
-	virtualenv venv; \
-	. venv/bin/activate; \
+	virtualenv env; \
+	. env/bin/activate; \
 	pip install -r requirements.txt;
 
 tests:
-	. venv/bin/activate; \
-	python manage.py test
+	. env/bin/activate; \
+	python3 manage.py test
 
 run:
-	. venv/bin/activate; \
-	python manage.py run
+	. env/bin/activate; \
+	python3 manage.py run
 
 all: clean install tests run
