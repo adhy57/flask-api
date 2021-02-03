@@ -26,6 +26,6 @@ class TaskDto:
         'detail': fields.String(required=True, description='Detail'),
     })
 
-    task_delete = api.model('task', {
-        'id': fields.Integer(description='task_id'),
+    task_delete = api.model('task_delete', {
+        'id': fields.Integer(required=True, description='task_id'),
     })

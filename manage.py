@@ -12,7 +12,15 @@ from app.main.model import task
 
 from app import blueprint
 
+
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
+
+# @app.after_request
+# def after_request(response):
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+#     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+#     return response
+
 app.register_blueprint(blueprint)
 app.app_context().push()
 

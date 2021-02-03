@@ -39,9 +39,9 @@ class TaskList(Resource):
     
 
 
-@api.route('/<task_id>')
+@api.route('/<task_id>/')
 @api.param('task_id', 'The Task identifier')
-@api.response(404, 'User not found.')
+@api.response(404, 'Task not found.')
 class Task(Resource):
     @api.response(201, 'Task successfully updated.')
     @token_required
